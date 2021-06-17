@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 import SportItem from "../SportItem";
 
 import { SportList } from './styles';
+import { SportsContext } from "../contexts/SportsContexts";
 
 interface Sport {
     Descricao: string;
@@ -11,20 +12,11 @@ interface Sport {
 }
 
 const Home = (): JSX.Element => {
-    const [sports, setSports] = useState<Sport[]>([])
+    const { sports } = useContext(SportsContext)
 
-    useEffect(() => {
-
-        fetch('http://tst.sportibrasil.com.br/Services/CategoriaService.svc/ObterTodasCategorias')
-        .then(response => response.json())
-        .then(data => setSports(data.ObterTodasResult))
-            
-        
-    }, [])
     return ( 
     
     <SportList>
-
         {sports.map(sport => {
             return <SportItem key={sport.ID} sport={sport}/>
         })}
