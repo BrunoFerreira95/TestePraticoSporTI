@@ -9,24 +9,30 @@ export const SportList = styled.ul`
         display: flex;
         align-content: center;
         align-items: center;
+        justify-content: space-between;
         background: #d1ecd7;
         border-radius: 4px;
-        padding: 5px;
+        padding: 10px;
 
-        > strong {
+        > div strong {
             font-size: 16px;
             line-height: 10px;
             color: #333;
             margin: 10px;
+
         }
 
-        > span {
+        > div span {
             font-size: 18px;
-            font-weight: bold;
             margin: 10px;
         }
 
         button {
+            
+        }
+
+        img {
+            width: 1rem;
             
         }
     }
